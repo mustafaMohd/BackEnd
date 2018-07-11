@@ -2,11 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import db from './Congif/index';
+//import db from './Congif/index';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-
+import connectToDb from './db/connect';
 
 
 let app = express();
@@ -25,6 +25,9 @@ app.use(express.static(path.join(__dirname, "../frontEnd/dist/frontEnd")));
 
 //for files
 app.use(express.static(path.join(__dirname, "./Files")));
+
+
+
 
 //#region MongoDB connection 
 
